@@ -1,0 +1,32 @@
+micronaut:
+  application:
+    name: complete
+  security:
+    enabled: true
+    endpoints:
+      login:
+        enabled: true
+        path: /auth/login
+      oauth:
+        enabled: true
+    token:
+      jwt:
+        enabled: true
+        signatures:
+          secret:
+            generator:
+              secret: pleaseChangeThisSecretForANewOne
+              jws-algorithm: HS256
+
+credentials:
+  users:
+    smith: smith123
+    scott: scott123
+    piomin: piomin123
+    test: test123
+  roles:
+    smith: ADMIN
+    scott: VIEW
+    piomin: VIEW
+    test: ADMIN
+
